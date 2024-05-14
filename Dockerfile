@@ -104,7 +104,7 @@ echo "/opt/MCRIBS/bin/\$CMD \$@" >> /opt/entrypoint.sh &&\
 chmod 777 /opt/entrypoint.sh
 
 RUN rm -fr /opt/MCRIBS/ITK/ITK-build /opt/MCRIBS/VTK/VTK-build /opt/MCRIBS/MIRTK/MIRTK-build
-RUN rm -f freesurfer-7.4.1.tar.xz
+RUN rm -f freesurfer-linux-ubuntu22_amd64-7.4.1.tar.gz
 RUN rm -fr /opt/ANTs/ANTs /opt/ANTs/ANTs-build
 
 COPY bin /opt/MCRIBS/bin
