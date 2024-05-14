@@ -80,8 +80,9 @@ RUN python3 fslinstaller.py -d /opt/fsl -V 6.0.6.5
 RUN rm fslinstaller.py
 
 # copy in Freesurfer
-COPY freesurfer-7.4.1.tar.xz /opt
-RUN tar xpf freesurfer-7.4.1.tar.xz 
+RUN curl -s https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.4.1/freesurfer-linux-ubuntu22_amd64-7.4.1.tar.gz -o freesurfer-linux-ubuntu22_amd64-7.4.1.tar.gz 
+COPY freesurfer-linux-ubuntu22_amd64-7.4.1.tar.gz /opt
+RUN tar xpf freesurfer-linux-ubuntu22_amd64-7.4.1.tar.gz 
 
 RUN touch /opt/entrypoint.sh &&\
 echo "#!/bin/bash" >> /opt/entrypoint.sh &&\
